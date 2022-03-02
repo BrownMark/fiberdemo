@@ -1,0 +1,110 @@
+basePath: /
+definitions:
+  ErrorResponse:
+    properties:
+      message:
+        type: string
+      param:
+        type: string
+      value:
+        type: string
+    type: object
+  Test:
+    properties:
+      age:
+        type: integer
+      name:
+        maxLength: 32
+        minLength: 3
+        type: string
+      testId:
+        type: integer
+    required:
+    - age
+    - name
+    type: object
+host: localhost:3000
+info:
+  contact:
+    email: fiber@swagger.io
+    name: API Support
+  description: This is a sample swagger for Fiber
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Fiber Example API
+  version: "1.0"
+paths:
+  /test/:
+    get:
+      description: Not much123!
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Test'
+        "204":
+          description: ""
+      summary: Says Hello123
+      tags:
+      - Test
+    post:
+      consumes:
+      - application/json
+      description: Not much13!
+      parameters:
+      - description: the create data example
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/Test'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Test'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      summary: Sample Post123
+      tags:
+      - Test
+  /test/{testId}:
+    put:
+      consumes:
+      - application/json
+      description: Not much123!
+      parameters:
+      - description: Test Id
+        in: path
+        name: testId
+        required: true
+        type: integer
+      - description: the update data example
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/Test'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Test'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      summary: Sample Put
+      tags:
+      - Test
+swagger: "2.0"

@@ -24,7 +24,7 @@ Additionally we need to install [SwagGo](https://github.com/swaggo/swag):
 go install github.com/swaggo/swag/cmd/swag@latest
 ```
 
-If isn't working, try making sure the gopath is correct:
+If isn't working, try making sure the `GOPATH` is correct:
 ```
 export PATH=$(go env GOPATH)/bin:$PATH
 ```

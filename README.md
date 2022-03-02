@@ -18,7 +18,7 @@ npm install husky -D
 npm run prepare
 ```
 
-Additionally we need to install [SwagGo] (https://github.com/swaggo/swag):
+Additionally we need to install [SwagGo](https://github.com/swaggo/swag):
 
 ```
 go install github.com/swaggo/swag/cmd/swag@latest
